@@ -17,6 +17,8 @@ export default function Quiz () {
     const [selfHarmThought, setSelfHarmThought] = useState(0)
     const [eatingHabits, setEatingHabits] = useState(0)
     const [workSchoolPerformance, setWorkSchoolPerformance] = useState(0)
+    const [result,setResult] = useState("")
+
     const response = {
         'age' : Number(age),
         'gender' : gender,
@@ -33,7 +35,18 @@ export default function Quiz () {
     function handleSubmit () {
         axios.post("http://127.0.0.1:8000/predict/",{'response': response})
         .then((res)=>{
-            console.log(res)
+            console.log(res.data)
+            const status = res.data
+            if(status == 0)
+            setResult("Poor")
+            else if(status == 1)
+            setResult("Fair")
+            else if(status == 2)
+            setResult("Neutral")
+            else if(status == 3)
+            setResult("Good")
+            else
+            setResult("Excellent")
         })
         .catch((err)=>{
             console.log(err)
@@ -187,6 +200,9 @@ export default function Quiz () {
                 </div>
             </div>
         </div> */}
+        {result && <div className="text-[#199388] text-lg text-center">
+            You Mental Health Status is {`${result}`}
+        </div>}
         <div className="w-3/5 mx-auto">
             <button className="rounded-md bg-[#199388] p-4 text-center text-white w-full text-lg" onClick={handleSubmit}>Submit</button>
         </div> 
