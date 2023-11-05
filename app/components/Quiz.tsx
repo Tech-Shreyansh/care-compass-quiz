@@ -170,10 +170,46 @@ export default function Quiz () {
                 <div className="pl-8">
                     <p className="text-black">Do you feel Isolated ?</p>
                     <div className="space-x-2">
-                        <input type="radio" className="cursor-pointer" name="stress" value={"yes"} onClick={()=>setIsolated(1)}/><label>Yes</label>
+                        <input type="radio" className="cursor-pointer" name="isolated" value={"yes"} onClick={()=>setIsolated(1)}/><label>Yes</label>
                     </div>
                     <div className="space-x-2">
-                        <input type="radio" className="cursor-pointer" name="stress" value={"no"} onClick={()=>setIsolated(0)}/><label>No</label>
+                        <input type="radio" className="cursor-pointer" name="isolated" value={"no"} onClick={()=>setIsolated(0)}/><label>No</label>
+                    </div>
+                </div>
+            </div>
+            <div className="w-4/5 mx-auto border border-2 border-gray px-8 py-4">
+                <QuestionHead number={9} />
+                <div className="pl-8">
+                    <p className="text-black">Do you experience Thoughts of self Harming?</p>
+                    <div className="space-x-2">
+                        <input type="radio" className="cursor-pointer" name="selfHarmThought" value={"no"} onClick={()=>setSelfHarmThought(0)}/><label>No</label>
+                    </div>
+                    <div className="space-x-2">
+                        <input type="radio" className="cursor-pointer" name="selfHarmThought" value={"sometimes"} onClick={()=>setSelfHarmThought(1)}/><label>Sometimes</label>
+                    </div>
+                    <div className="space-x-2">
+                        <input type="radio" className="cursor-pointer" name="selfHarmThought" value={"often"} onClick={()=>setSelfHarmThought(2)}/><label>Often</label>
+                    </div>
+                    <div className="space-x-2">
+                        <input type="radio" className="cursor-pointer" name="selfHarmThought" value={"yes"} onClick={()=>setSelfHarmThought(3)}/><label>Always</label>
+                    </div>
+                </div>
+            </div>
+            <div className="w-4/5 mx-auto border border-2 border-gray px-8 py-4">
+                <QuestionHead number={10} />
+                <div className="pl-8">
+                    <p className="text-black">How is your performance at Work/Institute?</p>
+                    <div className="space-x-2">
+                        <input type="radio" className="cursor-pointer" name="workSchoolPerformance" value={"poor"} onClick={()=>setWorkSchoolPerformance(0)}/><label>Poor</label>
+                    </div>
+                    <div className="space-x-2">
+                        <input type="radio" className="cursor-pointer" name="workSchoolPerformance" value={"fair"} onClick={()=>setWorkSchoolPerformance(1)}/><label>Fair</label>
+                    </div>
+                    <div className="space-x-2">
+                        <input type="radio" className="cursor-pointer" name="workSchoolPerformance" value={"good"} onClick={()=>setWorkSchoolPerformance(2)}/><label>Good</label>
+                    </div>
+                    <div className="space-x-2">
+                        <input type="radio" className="cursor-pointer" name="workSchoolPerformance" value={"excellent"} onClick={()=>setWorkSchoolPerformance(3)}/><label>Excellent</label>
                     </div>
                 </div>
             </div>
